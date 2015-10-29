@@ -1,0 +1,7 @@
+[push]
+	default = simple
+[user]
+	name = alex davis
+	email = alex@alex2006hw.com
+[core]
+	excludesfile = ~/.gitignore-global
