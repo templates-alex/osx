@@ -40,6 +40,8 @@ set showcmd
 set ruler
 set modelines=1
 let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#themes#molokai#pallet = {}
 " }}}
 
 " Colors, formatting and syntax highlighting {{{
@@ -206,7 +208,7 @@ if has('autocmd')
     autocmd!
 
 " }}}
-"
+
 " Neobundle Bundles {{{
      if has('vim_starting')
    set nocompatible               " Be iMproved
@@ -236,15 +238,19 @@ if has('autocmd')
  NeoBundle 'junegunn/vim-easy-align'
  NeoBundle 'scrooloose/nerdtree'
  NeoBundle 'Xuyuanp/nerdtree-git-plugin'
- NeoBundle 'cohama/lexima.vim'
+ NeoBundle 'Raimondi/delimitMate'
  NeoBundle 'vim-scripts/closetag.vim'
  NeoBundle 'edsono/vim-matchit'
+ NeoBundle 'bling/vim-airline'
+ NeoBundle 'airblade/vim-gitgutter'
+ NeoBundle 'mhinz/vim-signify'
 
  " vim essentials {{{
  " http://code.tutsplus.com/series/vim-essential-plugins--net-19224
  " Triggers: \w \ge \k
  NeoBundle 'Lokaltog/vim-easymotion'
  NeoBundle 'tpope/vim-surround'
+" div.class > h1 then ctrl-e to expand
  NeoBundle 'rstacruz/sparkup'
  NeoBundle 'scrooloose/nerdtree'
 " }}}
@@ -259,21 +265,6 @@ NeoBundle 'tomtom/tcomment_vim'
  NeoBundle 'rodnaph/vim-color-schemes'
  NeoBundle 'junegunn/limelight.vim'
  " }}}
-
-" Syntax lint {{
-" https://jaxbot.me/articles/setting-up-vim-for-react-js-jsx-02-03-2015
-" NeoBundle 'mxw/vim-jsx'
-" let g:jsx_ext_required = 0 " Allow JSX in normal JS files
-" let g:syntastic_javascript_checkers = ['eslint']
-" let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
-" need to install the following to support syntax checking
-" npm install -g eslint
-" npm install -g babel-eslint
-" npm install -g eslint-plugin-react
-" npm install -g react-tools
-" npm install -g jshint
-" npm install -g syntastic-react
-" }}
 
 " Vimshell {{{
  NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -389,10 +380,13 @@ endif
 " }}}
 
 " Bundle Configurations {{{
-let g:ruby_path = '/usr/local/opt/rbenv/shims'
-let g:syntastic_ruby_checkers=['mri', 'rubocop']
 let g:ycm_global_ycm_extra_conf = "~/.vim/ycm_extra_conf.py"
 
+" closetag config
+autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
+autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
+
+" Nerdtree config
 map <C-n> :NERDTreeToggle<CR>
 
 let g:NERDTreeIndicatorMapCustom = {

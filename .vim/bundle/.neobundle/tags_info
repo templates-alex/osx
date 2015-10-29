@@ -1,6 +1,6 @@
 closetag.vim
 ctrlp.vim
-lexima.vim
+delimitMate
 limelight.vim
 neobundle.vim
 neosnippet-snippets
@@ -11,15 +11,18 @@ sparkup
 supertab
 tcomment_vim
 tern_for_vim
+vim-airline
 vim-color-schemes
 vim-colorschemes
 vim-daylight
 vim-easy-align
 vim-easymotion
 vim-fugitive
+vim-gitgutter
 vim-matchit
 vim-nodejs-complete
 vim-ruby
 vim-scriptease
+vim-signify
 vim-surround
 vimshell

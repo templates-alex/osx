@@ -2,12 +2,12 @@
 =============
 default template for a OSX user's home account.  Do the following after clone
 
-## update vim packages
+## Update vim packages
 ```
 ./bin/viminstall
 ```
 
-## Added homebrew, nvm, rvm, pyenv, gvm
+## Added utilities homebrew, nvm, rvm, pyenv, gvm
 ```
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
