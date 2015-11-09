@@ -43,6 +43,16 @@
 .viminfo
 .vimshell
 .wapi
+.NERDTreeBookmarks
+.Xauthority
+.adobe/
+.cf/
+.config/
+.electron/
+.emacs.d/
+.gnupg/
+.ipynb_checkpoints/
+.plugman/
 Applications
 Desktop
 Documents

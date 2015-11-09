@@ -1,0 +1,13 @@
+#!/bin/bash
+# based on https://gist.github.com/yellowled/1439610
+IN=$1
+OUT=$(echo $1 | sed 's/^\(.*\)\.[a-zA-Z0-9]*$/\1/')
+# webm
+ffmpeg -i $(IN) -c:v libvpx -pass 1 -an -f rawvideo -y /dev/null  # Generates ffmpeg2pass-0.log
+ffmpeg -i $(IN) -c:v libvpx -pass 2 -f webm -b:v 400K -crf 10 -an -y $(OUT).webm
+
+# mp4
+ffmpeg -i $IN -acodec aac -strict experimental -ac 2 -ab 128k -vcodec libx264 -preset slow -f mp4 -crf 22 -s 640x360 $OUT.mp4
+
+# ogg (if you want to support older Firefox)
+#ffmpeg -i $(IN) -acodec vorbis -ac 2 -ab 96k -ar 44100  -b 345k -s 640x360 $(OUT).ogv

@@ -13,17 +13,20 @@ function init
   sips -s format png -z 512 512   $FILE --out $DIR/iTunesArtwork.png
 
   # devices
-  sips -s format png -z 144 144   $FILE --out $DIR/Icon-72@2x.png
-  sips -s format png -z 72 72     $FILE --out $DIR/Icon-72.png
-
+  sips -s format png -z 180 180   $FILE --out $DIR/Icon-180.png
+  sips -s format png -z 152 152   $FILE --out $DIR/Icon-152.png
+  sips -s format png -z 144 144   $FILE --out $DIR/Icon-144@2x.png
+  sips -s format png -z 120 120   $FILE --out $DIR/Icon-120@2x.png
   sips -s format png -z 114 114   $FILE --out $DIR/Icon@2x.png
-  sips -s format png -z 57 57     $FILE --out $DIR/Icon.png
-
-  # others
-  sips -s format png -z 100 100   $FILE --out $DIR/Icon-Small-50@2x.png
-  sips -s format png -z 50 50     $FILE --out $DIR/Icon-Small-50.png
-
+  sips -s format png -z 100 100   $FILE --out $DIR/Icon-100@2x.png
+  sips -s format png -z 87 87     $FILE --out $DIR/Icon-87@3x.png
+  sips -s format png -z 80 80     $FILE --out $DIR/Icon-80.png
+  sips -s format png -z 76 76     $FILE --out $DIR/Icon-76.png
+  sips -s format png -z 72 72     $FILE --out $DIR/Icon-72.png
   sips -s format png -z 58 58     $FILE --out $DIR/Icon-Small@2x.png
+  sips -s format png -z 57 57     $FILE --out $DIR/Icon-Small-57@2x.png
+  sips -s format png -z 50 50     $FILE --out $DIR/Icon-Small-50.png
+  sips -s format png -z 40 40     $FILE --out $DIR/Icon-Small-40.png
   sips -s format png -z 29 29     $FILE --out $DIR/Icon-Small.png
 }
 
